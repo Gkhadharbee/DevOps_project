@@ -104,6 +104,6 @@ Create index file naming as index.html which contains html simple code.
 vim index.html
 ```
 
-![Screenshot 2025-02-25 133436](https://github.com/user-attachments/assets/4b46a5d4-90ff-4a84-a4a3-7ec86334a62a)
+### ![Screenshot 2025-02-25 133436](https://github.com/user-attachments/assets/4b46a5d4-90ff-4a84-a4a3-7ec86334a62a)
 
 
