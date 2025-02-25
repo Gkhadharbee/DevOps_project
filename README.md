@@ -29,13 +29,13 @@ Build the Docker Image and finally run the container using Docker commands
 
 Set up an EC2 instance in an Amazon VPC by following below images.
 
-![Screenshot 2025-02-23 153719](https://github.com/user-attachments/assets/e29645e9-ff2e-4935-b910-3bd638d2e0d6)
+![Screenshot 2025-02-23 153719](https://github.com/user-attachments/assets/a7982145-343a-481b-b282-2b565d446a73)
 
-![Screenshot 2025-02-23 153735](https://github.com/user-attachments/assets/54ffbcef-88a0-4a8c-a0d1-f0a07fbb6782)
+![Screenshot 2025-02-23 153735](https://github.com/user-attachments/assets/c290c7ef-74f7-4e70-8f48-0b51f8169234)
 
-![Screenshot 2025-02-23 153752](https://github.com/user-attachments/assets/19d7672f-43d4-43c5-bd13-f6795c677a58)
+![Screenshot 2025-02-23 153752](https://github.com/user-attachments/assets/f2ababc3-8b04-429c-a2f9-e504a613d559)
 
-![Screenshot 2025-02-23 153837](https://github.com/user-attachments/assets/e20884f5-7948-47f8-9682-fa6e7236bbdb)
+![Screenshot 2025-02-23 153837](https://github.com/user-attachments/assets/d50c9257-5842-4981-b22a-6a9913671763)
 
 Finally Launch the EC2 Instance.
 
