@@ -27,6 +27,8 @@ Build the Docker Image and finally run the container using Docker commands.
 
 ### <p align="">Step1:</p>
 
+#### <p align="">Launch EC2 instance</p>
+
 1. Set up an EC2 instance in an Amazon VPC by following below images.
 
 ![Screenshot 2025-02-23 153719](https://github.com/user-attachments/assets/a7982145-343a-481b-b282-2b565d446a73)
@@ -41,6 +43,8 @@ Build the Docker Image and finally run the container using Docker commands.
 3. Connect to the instance through the putty or through any terminal using Key pair.
 
 ### <p align="">Step2:</p>
+
+#### <p align="">Install Docker</p>
 
 1. After connecting to the instance, Install Docker using the following commands.
 2. Before installing Docker, you should update the package index:
@@ -82,6 +86,8 @@ docker --version
 
 ### <p align="">Step3:</p>
 
+#### <p align="">Create a Directory</p>
+
 1. Create a directory for the web server project using below commands
 
 ```bash
@@ -98,6 +104,8 @@ cd files
 
 ### <p align="">Step4:</p>
 
+#### <p align="">Create Index file</p>
+
 Create index file naming as index.html which contains html simple code.
 
 ```bash
@@ -107,6 +115,8 @@ vim index.html
 ![Screenshot 2025-02-25 133436](https://github.com/user-attachments/assets/4b46a5d4-90ff-4a84-a4a3-7ec86334a62a)
 
 ### <p align="">Step5:</p>
+
+#### <p align="">Create Dockerfile</p>
 
 Create a Dockerfile to specify the docker image.
 
@@ -121,6 +131,8 @@ It helps to copy yhe index.html file into ngnix web server folder so that the we
 
 ### <p align="">Step6:</p>
 
+#### <p align="">Build Docker Image</p>
+
 Build the Docker Image using docker commands
 
 ```bash
@@ -131,6 +143,7 @@ docker build -t my_web_server .
 
 ### <p align="">Step7:</p>
 
+#### <p align="">Start the container</p>
 Run a docker container from image:
 
 ```bash
@@ -141,6 +154,8 @@ docker run -p 9090:80 my_web_server
 
 ### <p align="">Step8:</p>
 
+#### <p align="">Allow the required port</p>
+
 1. Allowing a port in the host system to communicate with a port in the Docker container.
 2. To access the web server, you have to configure the security group linked with the EC2 instance running the docker container to permit incoming traffic on the port used by the web server.
 
@@ -149,6 +164,8 @@ docker run -p 9090:80 my_web_server
 3. And save the changes in Inbound rules.
 
 ### <p align="">Step9:</p>
+
+#### <p align="">Access the Web Server</p>
 
 Open a web browser and go to “http://<public_ip_of_instance>:9090". You should see the message “Hello! Everyone, I am Khadhar Bee, This is my simple web server with Docker project”
 
