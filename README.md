@@ -27,7 +27,7 @@ Build the Docker Image and finally run the container using Docker commands.
 
 ### <p align="">Step1:</p>
 
-#### <p align="">Launch EC2 instance</p>
+#### <p align="">Launch the EC2 instance</p>
 
 1. Set up an EC2 instance in an Amazon VPC by following below images.
 
@@ -95,7 +95,7 @@ mkdir nginx_image
 cd nginx_image
 ```
 
-2. Create another directory called Files where we will store the index file and the dockerfile.
+2. Create another directory called files where we will store the index file and the dockerfile.
 
 ```bash
 mkdir files
@@ -167,6 +167,6 @@ docker run -p 9090:80 my_web_server
 
 #### <p align="">Access the Web Server</p>
 
-Open a web browser and go to “http://<public_ip_of_instance>:9090". You should see the message “Hello! Everyone, I am Khadhar Bee, This is my simple web server with Docker project”
+Open a web browser and go to “http://<public_ip_of_instance>:9090". You should see the message “Hello! Everyone, I am Khadhar Bee, This is my simple webserver with docker project”
 
 ![Screenshot 2025-02-24 123836](https://github.com/user-attachments/assets/4baf03c6-b6e2-4919-b504-b92ff0b811ba)
