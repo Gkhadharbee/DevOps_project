@@ -1,6 +1,6 @@
 # <p align="">Simple WebServer with Docker
 ## <p align="">About the project</p>
-   This project demonstrates how to create a simple web server with Docker. In this , we create a basic web server application and package it within a Docker container, 
+   This project demonstrates how to create a simple web server with Docker. In this , we create a basic web server application and package it within a Docker container,
    allowing for easy deployment and management of your web service across different environments by leveraging Docker's containerization features.
    
 ![image](https://github.com/user-attachments/assets/55d631b4-e981-4d9d-b56f-b8d35c91d788)
@@ -8,7 +8,7 @@
 ## Overview
 
 Create basic web server code that listens on a port and serves a basic HTML page when accessed. 
-Write a Dockerfile,specify a base image and copy the web server code into the container.
+Write a Dockerfile, specify a base image and copy the web server code into the container.
 Build the Docker Image and finally run the container using Docker commands.
 
 ## Pre-requisites
@@ -104,6 +104,52 @@ Create index file naming as index.html which contains html simple code.
 vim index.html
 ```
 
-### ![Screenshot 2025-02-25 133436](https://github.com/user-attachments/assets/4b46a5d4-90ff-4a84-a4a3-7ec86334a62a)
+![Screenshot 2025-02-25 133436](https://github.com/user-attachments/assets/4b46a5d4-90ff-4a84-a4a3-7ec86334a62a)
 
+### <p align="">Step5:</p>
 
+Create a Dockerfile to specify the docker image.
+
+```bash
+FROM nginx
+COPY index.html /usr/share/nginx/html/index.html
+```
+
+It helps to copy yhe index.html file into ngnix web server folder so that the web server can serve it to the users when they access the website.
+
+![Screenshot 2025-02-24 124011](https://github.com/user-attachments/assets/4b45b5b3-b347-473f-9e3a-e7dd81ccffcf)
+
+### <p align="">Step6:</p>
+
+Build the Docker Image using docker commands
+
+```bash
+docker build -t my_web_server .
+```
+
+![Screenshot 2025-02-24 124011](https://github.com/user-attachments/assets/6ec8ca64-d5f8-4d6b-a237-6d511c136c9c)
+
+### <p align="">Step7:</p>
+
+Run a docker container from image:
+
+```bash
+docker run -p 9090:80 my_web_server
+```
+
+![Screenshot 2025-02-24 123823](https://github.com/user-attachments/assets/7af5f05c-7ad9-48a7-8305-ecc76f6406ff)
+
+### <p align="">Step8:</p>
+
+1. Allowing a port in the host system to communicate with a port in the Docker container.
+2. To access the web server, you have to configure the security group linked with the EC2 instance running the docker container to permit incoming traffic on the port used by the web server.
+
+![Screenshot 2025-02-24 125513](https://github.com/user-attachments/assets/71258931-5b1c-4efd-8898-1f9d3af074e2)
+
+3. And save the changes in Inbound rules.
+
+### <p align="">Step9:</p>
+
+Open a web browser and go to “http://<public_ip_of_instance>:9090". You should see the message “Hello! Everyone, I am Khadhar Bee, This is my simple web server with Docker project”
+
+![Screenshot 2025-02-24 123836](https://github.com/user-attachments/assets/4baf03c6-b6e2-4919-b504-b92ff0b811ba)
