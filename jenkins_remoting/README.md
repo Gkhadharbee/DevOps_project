@@ -27,10 +27,51 @@ Jenkins Remoting is a library that enables communication between Jenkins master 
 ### <p align="">Step2:</p>
 
 #### <p align="">Install and Configure Jenkins</p>
-1. Download and Install Jenkins
-2. Start Jenkins and set up an admin user.
-3. Install Required Plugins
-Go to Manage Jenkins → Manage Plugins.
+1. Install Jenkins
+Ensure that your software packages are up to date on your instance by using the following command to perform a quick software update:
+```bash
+sudo yum update –y
+```
+Add the Jenkins repo using the following command:
+```bash
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+```
+Import a key file from Jenkins-CI to enable installation from the package:
+```bash
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+```
+Install Java (Amazon Linux 2023):
+```bash
+sudo yum install java-17-amazon-corretto -y
+
+Install Jenkins:
+```bash
+sudo yum install jenkins -y
+```
+Enable the Jenkins service to start at boot:
+```bash
+sudo systemctl enable jenkins
+
+Start Jenkins as a service:
+```bash
+sudo systemctl start jenkins
+```
+You can check the status of the Jenkins service using the command:
+```bash
+sudo systemctl status jenkins
+```
+3. Start Jenkins and set up an admin user.
+
+![Screenshot 2025-02-27 153044](https://github.com/user-attachments/assets/a84b4899-feaf-4e90-b75f-30b72b65a06e)
+
+![Screenshot 2025-02-27 153112](https://github.com/user-attachments/assets/a4058795-57f0-4c42-8e5e-f7af2d36b61d)
+
+![Screenshot 2025-02-27 153322](https://github.com/user-attachments/assets/2bc78408-3c9f-4106-9ebf-dc707240e4de)
+
+5. Install Required Plugins
+6. Go to Manage Jenkins → Manage Plugins.
 Install the following:
 * SSH Slaves Plugin (if using SSH-based agents).
 * JNLP (Java Web Start) Agent Plugin (for remoting-based agents).
@@ -41,12 +82,17 @@ Install the following:
 1. Using JNLP (Java Web Start)
 2. Go to Manage Jenkins → Manage Nodes.
 3. Click on New Node, provide a name, and select Permanent Agent.
+
+![Screenshot 2025-02-26 120407](https://github.com/user-attachments/assets/cebb0450-1100-4308-8f21-954ca56d01c5)
+
 Configure:
 * Remote Root Directory (e.g., /home/jenkins/ or C:\Jenkins\).
 * Labels (optional).
 * Usage: Keep as “Use this node as much as possible”.
 * Launch method: Choose “Launch agent by connecting it to the master”.
 * Save the node configuration.
+
+![Screenshot 2025-02-26 120442](https://github.com/user-attachments/assets/8afef8e3-a2bc-4c84-9f91-5ef5434526b9)
 
 ### <p align="">Step4:</p>
 
@@ -65,13 +111,18 @@ java -jar agent.jar -jnlpUrl http://<JENKINS_URL>:8080/computer/<NODE_NAME>/slav
 ```
 
 3. Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET_KEY> with actual values.
-4. You can find the secret key under Manage Nodes → Select the Node.
+4. On master node, You can find the secret key under Manage Nodes → Select the Node or you can use that command which is in the below image to run the agent.
+
+![Screenshot 2025-02-27 154250](https://github.com/user-attachments/assets/a267be20-7a2d-4752-bea9-325fe06b506b)
 
 ### <p align="">Step5:</p>
 
 #### <p align="">Verify Agent Connectivity</p>
 1. Go to Manage Jenkins → Manage Nodes.
 2. The node should be in Connected status.
+
+![Screenshot 2025-02-26 114909](https://github.com/user-attachments/assets/f78fb817-8981-4075-82a0-5c92a7d861fb)
+
 3. Run a test job to verify it executes on the agent.
 
 ### <p align="">Step6:</p> 
