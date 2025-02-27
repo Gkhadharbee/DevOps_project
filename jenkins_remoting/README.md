@@ -70,12 +70,11 @@ sudo systemctl status jenkins
 
 ![Screenshot 2025-02-27 153322](https://github.com/user-attachments/assets/2bc78408-3c9f-4106-9ebf-dc707240e4de)
 
-10. Install Required Plugins
-Go to Manage Jenkins → Manage Plugins.
-Install the following:
+10. Install Required Plugins.
+11. Go to Manage Jenkins → Manage Plugins.
+12. Install the following:
 * SSH Slaves Plugin (if using SSH-based agents).
-* JNLP (Java Web Start) Agent Plugin (for remoting-based agents)
-- (You don't need a separate plugin as JNLP is a core feature of Jenkins itself)
+* JNLP (Java Web Start) Agent Plugin (for remoting-based agents),(You don't need a separate plugin as JNLP is a core feature of Jenkins itself)
 
 ### <p align="">Step3:</p>
 
@@ -127,9 +126,10 @@ java -jar agent.jar -jnlpUrl http://<JENKINS_URL>:8080/computer/<NODE_NAME>/slav
 3. Run a test job to verify it executes on the agent.
 
 ### <p align="">Step6:</p> 
-1. Configure Jenkins Pipeline to Use Remote Agents
-2. Create a new Pipeline Job in Jenkins.
-3. Use the following pipeline script:
+
+#### <p align="">Configure Jenkins Pipeline to Use Remote Agents</p>
+1. Create a new Pipeline Job in Jenkins.
+2. Use the following pipeline script:
 
 ```bash
 pipeline {
@@ -146,7 +146,7 @@ pipeline {
     }
 }
 ```
-Save and run the pipeline.
+3. Save and run the pipeline.
 
 ### <p align="">Step7:</p>
 
