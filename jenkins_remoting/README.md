@@ -74,7 +74,7 @@ sudo systemctl status jenkins
 11. Go to Manage Jenkins → Manage Plugins.
 12. Install the following:
 * SSH Slaves Plugin (if using SSH-based agents).
-* JNLP (Java Web Start) Agent Plugin (for remoting-based agents),(You don't need a separate plugin as JNLP is a core feature of Jenkins itself)
+* JNLP (Java Web Start) Agent Plugin (for remoting-based agents), (You don't need a separate plugin as JNLP is a core feature of Jenkins itself)
 
 ### <p align="">Step3:</p>
 
@@ -111,7 +111,7 @@ java -jar agent.jar -jnlpUrl http://<JENKINS_URL>:8080/computer/<NODE_NAME>/slav
 ```
 
 3. Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET_KEY> with actual values.
-4. On master node, You can find the secret key under Manage Nodes → Select the Node or you can use that command which is in the below image to run the agent.
+4. On master node, You can find the secret key under Manage Nodes → Select the Node (or) you can use that command which is in the below image to run the agent.
 
 ![Screenshot 2025-02-27 154250](https://github.com/user-attachments/assets/a267be20-7a2d-4752-bea9-325fe06b506b)
 
