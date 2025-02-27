@@ -27,42 +27,42 @@ Jenkins Remoting is a library that enables communication between Jenkins master 
 ### <p align="">Step2:</p>
 
 #### <p align="">Install and Configure Jenkins</p>
-1. Install Jenkins
-Ensure that your software packages are up to date on your instance by using the following command to perform a quick software update:
+Install Jenkins
+1. Ensure that your software packages are up to date on your instance by using the following command to perform a quick software update:
 ```bash
 sudo yum update –y
 ```
-Add the Jenkins repo using the following command:
+2. Add the Jenkins repo using the following command:
 ```bash
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 ```
-Import a key file from Jenkins-CI to enable installation from the package:
+3. Import a key file from Jenkins-CI to enable installation from the package:
 ```bash
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo yum upgrade
 ```
-Install Java (Amazon Linux 2023):
+4. Install Java (Amazon Linux 2023):
 ```bash
 sudo yum install java-17-amazon-corretto -y
-
-Install Jenkins:
+```
+5. Install Jenkins:
 ```bash
 sudo yum install jenkins -y
 ```
-Enable the Jenkins service to start at boot:
+6. Enable the Jenkins service to start at boot:
 ```bash
 sudo systemctl enable jenkins
-
-Start Jenkins as a service:
+```
+7. Start Jenkins as a service:
 ```bash
 sudo systemctl start jenkins
 ```
-You can check the status of the Jenkins service using the command:
+8. You can check the status of the Jenkins service using the command:
 ```bash
 sudo systemctl status jenkins
 ```
-3. Start Jenkins and set up an admin user.
+9. Start Jenkins and set up an admin user.
 
 ![Screenshot 2025-02-27 153044](https://github.com/user-attachments/assets/a84b4899-feaf-4e90-b75f-30b72b65a06e)
 
@@ -70,11 +70,12 @@ sudo systemctl status jenkins
 
 ![Screenshot 2025-02-27 153322](https://github.com/user-attachments/assets/2bc78408-3c9f-4106-9ebf-dc707240e4de)
 
-5. Install Required Plugins
-6. Go to Manage Jenkins → Manage Plugins.
+10. Install Required Plugins
+Go to Manage Jenkins → Manage Plugins.
 Install the following:
 * SSH Slaves Plugin (if using SSH-based agents).
-* JNLP (Java Web Start) Agent Plugin (for remoting-based agents).
+* JNLP (Java Web Start) Agent Plugin (for remoting-based agents)
+- (You don't need a separate plugin as JNLP is a core feature of Jenkins itself)
 
 ### <p align="">Step3:</p>
 
